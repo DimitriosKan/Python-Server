@@ -17,7 +17,7 @@ sudo cp -R ~/tools/Python_Server/app.py /home/pythonadm
 sudo cp -R ~/tools/Python_Server/templates/index.html /home/pythonadm/templates
 
 # runs server
-sudo su - pythonadm -c "python app.py"
+	#sudo su - pythonadm -c "python app.py"
 # place .service file in directory (where the jenkins file is)
 sudo cp pyserver.service /etc/systemd/system/
 
