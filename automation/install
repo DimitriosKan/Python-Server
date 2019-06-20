@@ -1,0 +1,29 @@
+#!/bin/bash
+
+# global install for Flask
+sudo apt-get install python-pip
+pip install --upgrade pip
+
+# create new user
+sudo useradd --create-home pythonadm
+sudo usermod --shell /bin/bash pythonadm
+
+# switch to new user
+sudo su - pythonadm -c "pip install Flask"
+sudo su - pythonadm -c "mkdir templates"
+
+# copy files from deployer
+sudo cp -R ~/tools/Python_Server/app.py /home/pythonadm
+sudo cp -R ~/tools/Python_Server/templates/index.html /home/pythonadm/templates
+
+# runs server
+sudo su - pythonadm -c "python app.py"
+# place .service file in directory (where the jenkins file is)
+sudo cp pyserver.service /etc/systemd/system/
+
+# load new service
+sudo systemctl daemon-reload
+
+# starts Flask server
+sudo systemctl start pyserver
+echo Flask server is started ... Go to http://127.0.0.1:5000/

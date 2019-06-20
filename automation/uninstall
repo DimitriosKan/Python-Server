@@ -1,0 +1,4 @@
+sudo userdel pythonadm
+sudo userdel -r pythonadm
+
+echo *user profiles deleted*

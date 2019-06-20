@@ -1,0 +1,10 @@
+[Unit]
+Description=Flask Server
+
+[Service]
+User=pythonadm
+WorkingDirectory=/home/pythonadm
+ExecStart=/usr/bin/python python /home/Python_Service/app.py
+
+[Install]
+WantedBy=multi-user.target
