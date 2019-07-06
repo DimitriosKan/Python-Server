@@ -2,7 +2,12 @@
 
 sudo service pyserver stop
 
-sudo userdel pythonadm
+echo *pyserver stopped*
+
+sudo rm /etc/systemd/system/pyserver.service
+
+echo *pyserver removed from /etc*
+
 sudo userdel -r pythonadm
 
 echo *user profiles deleted*

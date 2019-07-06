@@ -13,8 +13,8 @@ sudo su - pythonadm -c "pip install Flask"
 sudo su - pythonadm -c "mkdir templates"
 
 # copy files from deployer
-sudo cp -R ~/tools/Python_Server/app.py /home/pythonadm
-sudo cp -R ~/tools/Python_Server/templates/index.html /home/pythonadm/templates
+sudo cp -R ../app.py /home/pythonadm
+sudo cp -R ../templates/index.html /home/pythonadm/templates
 
 # runs server
 	#sudo su - pythonadm -c "python app.py"
